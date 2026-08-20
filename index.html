@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="C:\Users\Admin\Downloads\WEBPAGELOGO.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<style>
+    :root {
+        --navy-deep: #0D1B2A;
+        --navy-dark: #0C1927;
+        --blue-mid: #0F3768;
+        --teal-light: #689DA0;
+        --text-light: #EAF2F4;
+        --text-muted: #9FB3C0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        font-family: 'Montserrat', 'Poppins', 'Nunito', sans-serif;
+        background: linear-gradient(135deg, #0D1B2A 0%, #0C1927 30%, #0F3768 65%, #689DA0 100%);
+        min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 40px;
+        background-color: rgba(10, 18, 28, 0.05);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(104, 157, 160, 0.25);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    /* Website Logo and Name */
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, var(--teal-light), var(--blue-mid) 70%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 2px rgba(104, 157, 160, 0.35);
+        flex-shrink: 0;
+    }
+
+    .logo-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--text-light);
+    }
+
+    .brand-name {
+        color: var(--text-light);
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+
+    /* Center Navigation Links */
+
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+ 
+    .navbar-links li a {
+        display: inline-block;
+        padding: 8px 18px;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 8px;
+        position: relative;
+        transition: color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
+    }
+ 
+    .navbar-links li a::after {
+        content: "";
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 4px;
+        height: 2px;
+        background-color: var(--teal-light);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+    }
+ 
+    .navbar-links li a:hover {
+        color: var(--text-light);
+        background-color: rgba(104, 157, 160, 0.12);
+        transform: translateY(-1px);
+    }
+ 
+    .navbar-links li a:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* Start Learning Button */
+
+    .btn-start {
+        padding: 10px 22px;
+        border: 1px solid var(--teal-light);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text-light);
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-start:hover {
+        background-color: var(--teal-light);
+        color: var(--blue-mid);
+        box-shadow: 0 4px 16px rgba(104, 157, 160, 0.45);
+        transform: translateY(-2px);
+    }
+
+    .btn-start:active {
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+        .navbar-links {
+            display: none;
+        }
+        .navbar {
+            padding: 14px 20px;
+        }
+    }
+
+    /* Website Overview */
+
+    .overview-wrap {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 40px;
+    }
+
+    .overview-container {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+        border: 1.5px solid rgba(234, 242, 244, 0.85);
+        border-radius: 20px;
+        padding: 28px;
+        background-color: rgba(10, 18, 28, 0.35);
+    }
+ 
+    .overview-text {
+        flex: 1 1 55%;
+        border-radius: 14px;
+        padding: 40px 36px;
+        background: linear-gradient(160deg, rgba(15, 55, 104, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%);
+        border: 1px solid rgba(104, 157, 160, 0.25);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    .overview-text h1 {
+        color: #689DA0;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+ 
+    .overview-text p {
+        color: #9FB3C0;
+        font-size: 15.5px;
+        line-height: 1.8;
+    }
+ 
+  @media (max-width: 900px) {
+    .overview-container {
+        flex-direction: column;
+        padding: 20px;
+        }
+    .overview-text {
+        text-align: center;
+        padding: 32px 24px;
+        }
+    }
+
+    /* Start Learning Section */
+
+    .start-learning-wrap {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 40px;
+    }
+
+    .start-learning-container {
+        border: 1.5px solid rgba(234, 242, 244, 0.05);
+        border-radius: 20px;
+        padding: 50px 40px;
+        background-color: rgba(10, 10, 20, 0.35);
+        text-align: center;
+    }
+
+    .start-learning-container .subtitle {
+        color: #9FB3C0;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    /* Topic Containers */
+
+    .topics-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topic-card {
+        border-radius: 14px;
+        padding: 20px 32px;
+        background: linear-gradient(160deg, rgba(15, 55, 104, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%);
+        border: 1px solid rgba(104, 157, 160, 0.25);
+        text-align: left;
+        transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .topic-card:hover {
+        border-color: var(--teal-light);
+        background: linear-gradient(160deg, rgba(104, 157, 160, 0.22) 0%, rgba(15, 55, 104, 0.5) 100%);
+    }
+
+    .topic-card .topic-title {
+        color: #689DA0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        margin-bottom: 12px;
+    }
+
+    .topic-card .topic-paragraph {
+        color: #9FB3C0;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    /* About and Contact */
+
+    .info-wrap {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 40px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .info-card {
+        border-radius: 20px;
+        padding: 40px 36px;
+        background: linear-gradient(160 deg, rgba(15, 55, 104, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%);
+        border: 1.5px solid rgba (234, 242, 244, 0.85);
+    }
+
+    .info-card h2 {
+        color: #689DA0;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        margin-bottom: 16px;
+    }
+
+    .info-card p {
+        color: #9FB3C0;
+        font-size: 15px;
+        line-height: 1.0;
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/>
+                </svg>
+            </span>
+            <span class="brand-name">BeginnerCodingGeeks</span>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
+        </ul>
+
+        <button class="btn-start" onclick="document.getElementById('start-learning').scrollIntoView({behavior: 'smooth'})">Start Learning</button>
+    </nav>
+
+    <section class="overview-wrap">
+        <div class="overview-container">
+            <div class="overview-text">
+            <h1> Welcome to BeginnerCodingGeeks!</h1>
+            <p>
+                Welcome to BeginnerCodingGeeks! On this educational website, we aim to provide you with a comprehensive understanding of basic internet concepts, from simple Hypertext Markup Language (HTML) to more advanced topics such as Cascading Style Sheets (CSS) and JavaScript. Our goal is to empower you with the knowledge and skills needed to navigate the digital world effectively. Whether you're a beginner or looking to refresh your understanding, our modules are designed to be accessible and informative. Join us on this journey to explore the fascinating world of the internet and enhance your coding skills!
+            </p>
+            </div>
+    </section>
+
+     <section class="start-learning-wrap" id="start-learning">
+            <div class="start-learning-container">
+                <h1>Start your Coding Journey now on BeginnerCodingGeeks!</h1>
+                <p class="subtitle">With BeginnerCodingGeeks, coding is made accessibly easier.</p>
+
+            <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 1: How the Internet Works</h2>
+                <p class="topic-paragraph">
+                    The Internet works by connecting computers and devices through networks. When you visit a website, your device sends a request to a server, which sends the requested information back to your device. This happens through an Internet Protocol (IP) address and different networking protocols.
+                </p>
+            </div>
+
+            <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 2: Basic HTML Structure</h2>
+                <p class="topic-paragraph">
+                    The basic HTML structure generally runs through 7 common tags, which are the following: !DOCTYPE html (declares the document type and uses the modern HTML5 standard), html (root element that wraps web page code), head (contains metadata), meta charset=UTF-8 (sets character encoding to support all standard characters and tomatoes), meta name="viewport"... (ensures the page scales correctly), title (sets the browser tab name and search engine results), and body (contains all visible data seen on a web page).
+                </p>
+            </div>
+
+            <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 3: Text Formatting and Document Organization</h2>
+                <p class="topic-paragraph">
+                    Text formatting in web development is how you change words so they standout or show meaning. It styles a sentence: make it bold, slanted, highlighted, crossed out, subscript, and so on. Document organization, on the other hand, is how you split and arrange the whole page into clear parts. It structures the whole page: headings, paragraphs, sections, header, navigation, main content, sidebar, footer, and so forth. It keeps web content ordered so browser visitors know which goes where. In simple terms, text formatting is for stylization of verbal content, and document organization is the structural integrity of webpage content.
+                </p>
+            </div>
+
+            <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 4: Adding Hyperlinks, Images, and Tables</h2>
+                <p class="topic-paragraph">
+                    Adding images, hyperlinks, lists, and tables are easy, therefore let us break it down!
+                    <b>First</b>, in adding images, we use the tag img, involving attributes such as src, alt, and width and height. First, the "src" attribute specifies the file path or URL of the image. Next, the "alt" attribute provides alternative text that shows if the image fails to load; it also helps screen readers for accessibility. Lastly, the "width" and "height" attributes set the display size of the image.
+                    <b>Second</b>, in adding hyperlinks, we use the tag a or the anchor tag to create clickable connections, involving attributes such as href and target. The "href" attribute holds the destination URL or file name the link goes to. Meanwhile, the "target" attribute alongside _blank (target="_blank") enables the link to open in a new browser tab instead of the currently opened one.
+                    <b>Third</b>, in adding lists, we use the following tags: ul (unordered list), ol (ordered list), li (list), dl (description list), dt (defined term), and dd (defined item).
+                    <b>Lastly</b>, in adding tables, we use the following tags: tr (table row), th (table header cell), and td (standard table data cell).
+                </p>
+            </div>
+
+                <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 5: Simple Usage of Cascading Style Sheets (CSS)</h2>
+                <p class="topic-paragraph">
+                    Cascading Style Sheets (CSS) enables coders to control the visual presentation, design, and layout of a webpage. In web development, Hypertext Markup Language (HTML) provides the structural blueprint, while the purpose of CSS is to design the plain text to a vibrant user interface and user-friendly digital experience.      
+                </p>      
+            </div> 
+
+                <div class="topic-stack">
+                <div class="topic-card">
+                <h2 class="topic-title">Topic 6: Simple JavaScript Interactivity</h2>
+                <p class="topic-paragraph">
+                    Simple JavaScript interactivity allows web pages to respond directly to actions like clicks, typing, or hovering. When a user performs one of these actions, an event is triggered in the browser. JavaScript captures this event using a special instruction called an event listener. The script then executes code that modifies the page content or styling without reloading the whole page. This immediate visual feedback makes static websites feel engaging, alive, and responsive to user input.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-wrap">
+       <div class="info-grid">
+        <div class="info-card">
+            <h2>About Us</h2>
+            <p>
+            BeginnerCodingGeeks is a simply coded educational website by Grade 9 learners of Our Lady of Fatima Catholic School. It is built for similar students of the same grade level, and for anyone, who is starting to comprehend the vast world of coding; from typing the basics of HTML, CSS, and JavaScript into comprehensible beginner-friendly lessons so learners develop self-esteem and self-confidence with coding.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h2>Contact Us</h2>
+            <p>We would love to hear your feedbacks as we continue to improve the overall structural integrity of our website.</p>
+            <p>Email: beginnercodinggeeks@gmail.com</p>
+            <p>We request for your patience and understanding that our responses may take 3-5 days.</p>
+        </div>
+       </div>
+    </section>
+</body>
+</html>
