@@ -20,13 +20,10 @@
         box-sizing: border-box;
     }
 
-    html, body {
-        height: 100%;
-    }
-
     body {
         font-family: 'Montserrat', 'Poppins', 'Nunito', sans-serif;
         background: linear-gradient(135deg, #0D1B2A 0%, #0C1927 30%, #0F3768 65%, #689DA0 100%);
+        background-repeat: no-repeat;
     }
 
     /* Navigation Bar */
@@ -224,29 +221,25 @@
         margin: 60px auto;
         padding: 0 40px;
     }
-
+ 
     .start-learning-container {
-        display: flex;
-        align-items: stretch;
-        gap: 24px;
         border: 1.5px solid rgba(234, 242, 244, 0.85);
         border-radius: 20px;
-        padding: 28px;
+        padding: 50px 40px;
         background-color: rgba(10, 18, 28, 0.35);
         text-align: center;
     }
-
+ 
     .start-learning-container h1 {
-        color: #9FB3C0;
-        font-size: 36px;
+        color: var(--text-light);
+        font-size: 34px;
         font-weight: 700;
         letter-spacing: 0.3px;
-        line-height: 1.25;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
-    
+ 
     .start-learning-container .subtitle {
-        color: #9FB3C0;
+        color: var(--text-muted);
         font-size: 16px;
         margin-bottom: 40px;
     }
@@ -294,40 +287,39 @@
         margin: 60px auto;
         padding: 0 40px;
     }
-
+ 
     .info-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
-
+ 
     .info-card {
         border-radius: 20px;
         padding: 40px 36px;
-        background: linear-gradient(160 deg, rgba(15, 55, 104, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%);
-        border: 1.5px solid rgba (234, 242, 244, 0.85);
-        transition: border-color 0.25s ease, background 0.25s ease;
+        background: linear-gradient(160deg, rgba(15, 55, 104, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%);
+        border: 1.5px solid rgba(234, 242, 244, 0.85);
     }
-
+ 
     .info-card h2 {
-        color: #9FB3C0;
+        color: var(--text-light);
         font-size: 26px;
         font-weight: 700;
         letter-spacing: 0.3px;
         margin-bottom: 16px;
     }
-
+ 
     .info-card p {
-        color: #9FB3C0;
-        font-size: 16px;
-        line-height: 1.0;
+        color: var(--text-muted);
+        font-size: 15px;
+        line-height: 1.8;
         margin-bottom: 8px;
     }
-
-    @media (max-width: 900px) {
-        .info-grid {
-            grid-template-columns: 1fr;
-        }
+ 
+  @media (max-width: 900px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+       }
     }
 </style>
 </head>
@@ -367,7 +359,8 @@
             <div class="start-learning-container">
                 <h1>Start your Coding Journey now on BeginnerCodingGeeks!</h1>
                 <p class="subtitle">With BeginnerCodingGeeks, coding is made accessibly easier.</p>
-
+            </div>
+         
             <div class="topic-stack">
                 <div class="topic-card">
                 <h2 class="topic-title">Topic 1: How the Internet Works</h2>
@@ -375,20 +368,20 @@
                     The Internet works by connecting computers and devices through networks. When you visit a website, your device sends a request to a server, which sends the requested information back to your device. This happens through an Internet Protocol (IP) address and different networking protocols.
                 </p>
             </div>
-
+                
             <div class="topic-stack">
                 <div class="topic-card">
                 <h2 class="topic-title">Topic 2: Basic HTML Structure</h2>
                 <p class="topic-paragraph">
-                    The basic HTML structure generally runs through 7 common tags, which are the following: !DOCTYPE html (declares the document type and uses the modern HTML5 standard), html (root element that wraps web page code), head (contains metadata), meta charset=UTF-8 (sets character encoding to support all standard characters and tomatoes), meta name="viewport"... (ensures the page scales correctly), title (sets the browser tab name and search engine results), and body (contains all visible data seen on a web page).
+                    The basic HTML structure generally consists of a standardized set of encoded tags, wherein an exact structural layout is followed from &lt;!DOCTYPE html&gt; to &lt;html&gt; to &lt;head&gt; to &lt;meta&gt; to &lt;body&gt;. These core elements define the backbone (the "skeleton" of a webpage) or blueprint of the visible layout of a webpage.
                 </p>
             </div>
-
+                
             <div class="topic-stack">
                 <div class="topic-card">
                 <h2 class="topic-title">Topic 3: Text Formatting and Document Organization</h2>
                 <p class="topic-paragraph">
-                    Text formatting in web development is how you change words so they standout or show meaning. It styles a sentence: make it bold, slanted, highlighted, crossed out, subscript, and so on. Document organization, on the other hand, is how you split and arrange the whole page into clear parts. It structures the whole page: headings, paragraphs, sections, header, navigation, main content, sidebar, footer, and so forth. It keeps web content ordered so browser visitors know which goes where. In simple terms, text formatting is for stylization of verbal content, and document organization is the structural integrity of webpage content.
+                    In web development, text formatting and document organization help a webpage have comprehensible, easy-to-follow, and readable content for browser visitors. Text formatting is usually accomplished by using common tags such as &lt;b&gt; for bold text, &lt;i&gt; for italic text, or &lt;u&gt; for underlined text. On the other hand, document organization divides a webpage into clear sections, ensuring its structure is laid out in order. Simply put, text formation is the stylization of verbal content, and document organization is the structural integrity of webpage content.
                 </p>
             </div>
 
@@ -396,11 +389,7 @@
                 <div class="topic-card">
                 <h2 class="topic-title">Topic 4: Adding Hyperlinks, Images, and Tables</h2>
                 <p class="topic-paragraph">
-                    Adding images, hyperlinks, lists, and tables are easy, therefore let us break it down!
-                    <b>First</b>, in adding images, we use the tag img, involving attributes such as src, alt, and width and height. First, the "src" attribute specifies the file path or URL of the image. Next, the "alt" attribute provides alternative text that shows if the image fails to load; it also helps screen readers for accessibility. Lastly, the "width" and "height" attributes set the display size of the image.
-                    <b>Second</b>, in adding hyperlinks, we use the tag a or the anchor tag to create clickable connections, involving attributes such as href and target. The "href" attribute holds the destination URL or file name the link goes to. Meanwhile, the "target" attribute alongside _blank (target="_blank") enables the link to open in a new browser tab instead of the currently opened one.
-                    <b>Third</b>, in adding lists, we use the following tags: ul (unordered list), ol (ordered list), li (list), dl (description list), dt (defined term), and dd (defined item).
-                    <b>Lastly</b>, in adding tables, we use the following tags: tr (table row), th (table header cell), and td (standard table data cell).
+                    In web development, programmers use hyperlinks, images, lists, and tables as fundamental elements. It enhances quick navigation, visual engagement, data readability, and structured data comparison. We use various tags in each category, such as &lt;a&gt; (anchor tag) for hyperlinks, &lt;img&gt; (image tag) for images, &lt;ul&gt; or &lt;ol&gt; (unordered or ordered list) for lists, and &lt;tr&gt; (table row), &lt;th&gt; (table header), and &lt;td&gt; (table data) for tables.
                 </p>
             </div>
 
@@ -408,7 +397,7 @@
                 <div class="topic-card">
                 <h2 class="topic-title">Topic 5: Simple Usage of Cascading Style Sheets (CSS)</h2>
                 <p class="topic-paragraph">
-                    Cascading Style Sheets (CSS) enables coders to control the visual presentation, design, and layout of a webpage. In web development, Hypertext Markup Language (HTML) provides the structural blueprint, while the purpose of CSS is to design the plain text to a vibrant user interface and user-friendly digital experience.      
+                    Cascading Style Sheets (CSS), also known as "skin", "clothes", or "design" (if HTML is the "skeleton") enable web developers to control the visual presentation, design, and layout of a webpage. In web development, Hypertext Markup Language (HTML) provides the structural blueprint, while the purpose of CSS is to transform plain text into a vibrant user interface and user-friendly digital experience.      
                 </p>      
             </div> 
 
@@ -419,23 +408,22 @@
                     Simple JavaScript interactivity allows web pages to respond directly to actions like clicks, typing, or hovering. When a user performs one of these actions, an event is triggered in the browser. JavaScript captures this event using a special instruction called an event listener. The script then executes code that modifies the page content or styling without reloading the whole page. This immediate visual feedback makes static websites feel engaging, alive, and responsive to user input.
                 </p>
             </div>
-        </div>
     </section>
-
+                    
     <section class="info-wrap">
        <div class="info-grid">
         <div class="info-card">
             <h2>About Us</h2>
             <p>
-            BeginnerCodingGeeks is a simply coded educational website by Grade 9 learners of Our Lady of Fatima Catholic School. It is built for similar students of the same grade level, and for anyone, who is starting to comprehend the vast world of coding; from typing the basics of HTML, CSS, and JavaScript into comprehensible beginner-friendly lessons so learners develop self-esteem and self-confidence with coding.
+            BeginnerCodingGeeks is an educational website by Grade 9 learners of Our Lady of Fatima Catholic School. It is built for similar students of the same grade level, and for anyone, who is starting to comprehend the vast world of coding; from typing the basics of HTML, CSS, and JavaScript into comprehensible beginner-friendly lessons so learners develop self-esteem and self-confidence with coding.
             </p>
         </div>
 
         <div class="info-card">
             <h2>Contact Us</h2>
-            <p>We would love to hear your feedbacks as we continue to improve the overall structural integrity of our website.</p>
+            <p>We would love to hear your feedback as we continue to improve the overall structural integrity of our website.</p>
             <p>Email: beginnercodinggeeks@gmail.com</p>
-            <p>We request for your patience and understanding that our responses may take 3-5 days.</p>
+            <p>We request your patience and understanding that our responses may take 3-5 days.</p>
         </div>
        </div>
     </section>
